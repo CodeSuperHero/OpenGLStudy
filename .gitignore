@@ -1,0 +1,13 @@
+.vs/
+*.sln
+*.pdb
+*.ilk
+*.exe
+*.user
+*.filters
+*.vcxproj
+*.obj
+*.tlog
+*.log
+*.idb
+*.bin
