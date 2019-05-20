@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="include\Game.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GInput.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MeshRender.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util\FileUtil.h">
+      <Filter>include\util</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render\Shader.h">
+      <Filter>include\render</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glad\glad.h">
+      <Filter>include\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLFW\glfw3.h">
+      <Filter>include\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLFW\glfw3native.h">
+      <Filter>include\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\KHR\khrplatform.h">
+      <Filter>include\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stb_image.h">
+      <Filter>include\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Resources.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Texture2D.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Component.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\OSObject.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{0c3c1e58-d33e-4f29-a1d2-5fe503442f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{ae2f3adc-c7a0-4dc6-82a0-0014c1726dee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{caa9e57c-4f36-40aa-a613-1cf6d56db369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{596a6ca8-91d3-41c0-9744-aef207d2e493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\util">
+      <UniqueIdentifier>{19d70757-53c9-44e6-8f17-ba27275a2031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render">
+      <UniqueIdentifier>{93776597-d88f-415f-b86b-02eb579017f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\render">
+      <UniqueIdentifier>{3353e4e4-5621-4af3-a80a-53e2f2e277e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\lib">
+      <UniqueIdentifier>{2a7e811c-ba07-4de4-af40-9ebe92c1875d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{7724f8e9-9851-4a65-8700-794ba5c77d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{e352b639-6042-4f02-97e4-b7612484eb4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\engine">
+      <UniqueIdentifier>{b2045999-e53c-4564-8cd1-22a52fd49b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\engine">
+      <UniqueIdentifier>{885ea824-4f7d-4cbe-9143-b21c0d1f512b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Game.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GInput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MeshRender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\fileUtil.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\Shader.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glad.c">
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="include\stb_image.cpp">
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\Resources.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\Component.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="include\engine\Texture2D.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\vertex.vert">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\frag.frag">
+      <Filter>shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\container.jpg">
+      <Filter>assets</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
