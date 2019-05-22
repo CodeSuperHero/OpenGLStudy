@@ -21,7 +21,7 @@ namespace OSEngine
         return mId;
     }
 
-    void Shader::Active()
+    void Shader::Use()
     {
         glUseProgram(mId);
     }

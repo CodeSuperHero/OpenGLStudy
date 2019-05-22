@@ -19,6 +19,7 @@ namespace OSEngine
         unsigned int shaderProgram;
         unsigned int vaoHandler;
         Shader* shader;
-        OSEngine::Texture2D tex;
+        OSEngine::Texture2D* tex1;
+        OSEngine::Texture2D* tex2;
     };
 }

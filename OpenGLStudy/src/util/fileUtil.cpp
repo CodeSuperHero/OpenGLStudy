@@ -10,7 +10,7 @@ char* FileUtil::Read(const char *fn)
 {
     FILE *fp;
     char *content = nullptr;
-    int count = 0;
+    size_t count = 0;
     if (nullptr != fn)
     {
         auto err = fopen_s(&fp, fn, "r");

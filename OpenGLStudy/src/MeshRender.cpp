@@ -4,12 +4,13 @@
 #include "GLFW/glfw3.h"
 
 #include "engine/Resources.h"
+
 namespace OSEngine
 {
     MeshRender::MeshRender()
     {
-        auto t = Resources::LoadTexture("container.jpg");
-        tex = t;
+        tex1 = Resources::LoadTexture("container.jpg", GL_RGB, false);
+        tex2 = Resources::LoadTexture("awesomeface.png", GL_RGBA, true);
     }
 
     MeshRender::~MeshRender()
@@ -21,13 +22,17 @@ namespace OSEngine
     {
         InitShader();
         InitVAO();
+
+        tex1->Active(GL_TEXTURE0);
+        tex2->Active(GL_TEXTURE1);
+
+        shader->Use();
+        shader->setInt("texture1", 0);
+        shader->setInt("texture2", 1);
     }
 
     void MeshRender::Render()
     {
-        //glUseProgram(shaderProgram);
-        shader->Active();
-        tex.Active();
         glBindVertexArray(vaoHandler);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);

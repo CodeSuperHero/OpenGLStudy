@@ -1,17 +1,14 @@
 #pragma once
+#include "engine/OSObject.h"
 
 namespace OSEngine
 {
-    class Component
+    class Component : OSObject
     {
     public:
-        /* virtual void Init();
-         virtual void Enable();
-         virtual void Tick();
-         virtual void Disable();
-         virtual void Destroy();*/
-
-    private:
+        Component() {}
+        virtual ~Component() {  }
+    protected:
 
     };
 }
