@@ -1,7 +1,9 @@
 #include "render/Shader.h"
+
 #include "engine/Resources.h"
 
 #include "glad/glad.h"
+
 namespace OSEngine
 {
     Shader::Shader(const char* vertFileName, const char* fragFileName)
@@ -26,23 +28,29 @@ namespace OSEngine
         glUseProgram(mId);
     }
 
-    void Shader::setBool(const std::string & name, bool value) const
+    void Shader::SetMat44(const std::string & name, mat4 value) const
+    {
+        glUniformMatrix4fv(glGetUniformLocation(mId, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+    }
+
+    void Shader::SetBool(const std::string & name, bool value) const
     {
         glUniform1i(glGetUniformLocation(mId, name.c_str()), (int)value);
     }
 
-    void Shader::setInt(const std::string & name, int value) const
+    void Shader::SetInt(const std::string & name, int value) const
     {
         glUniform1i(glGetUniformLocation(mId, name.c_str()), value);
     }
 
-    void Shader::setFloat(const std::string & name, float value) const
+    void Shader::SetFloat(const std::string & name, float value) const
     {
         glUniform1f(glGetUniformLocation(mId, name.c_str()), value);
     }
 
     void Shader::CompileShader(const char * vertCode, const char * fragCode)
     {
+
         unsigned int vertex, fragment;
         int success;
         char infoLog[512];

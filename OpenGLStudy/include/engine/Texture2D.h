@@ -7,7 +7,7 @@
 
 namespace OSEngine
 {
-    class Texture2D final : OSObject
+    class Texture2D final : public OSObject
     {
     public:
         Texture2D(std::string name, std::string path, int format, const bool turn);

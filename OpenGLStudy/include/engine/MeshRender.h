@@ -1,10 +1,13 @@
 #pragma once
 #include "render/Shader.h"
 #include "engine/Texture2D.h"
+#include "engine/Component.h"
+#include "engine/Transform.h"
+#include "engine/Camera.h"
 
 namespace OSEngine
 {
-    class MeshRender final
+    class MeshRender final : Component
     {
     public:
         MeshRender();
@@ -14,12 +17,14 @@ namespace OSEngine
     private:
         void InitShader();
         void InitVAO();
-
+    public:
+        Transform transform;
     private:
         unsigned int shaderProgram;
         unsigned int vaoHandler;
         Shader* shader;
-        OSEngine::Texture2D* tex1;
-        OSEngine::Texture2D* tex2;
+        Texture2D* tex1;
+        Texture2D* tex2;
+        Camera camera;
     };
 }

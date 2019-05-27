@@ -4,12 +4,6 @@
     <ClInclude Include="include\Game.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\GInput.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\MeshRender.h">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="include\util\FileUtil.h">
       <Filter>include\util</Filter>
     </ClInclude>
@@ -772,6 +766,21 @@
     <ClInclude Include="include\engine\Transform.h">
       <Filter>include\engine</Filter>
     </ClInclude>
+    <ClInclude Include="include\engine\TRS.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Engine.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\MeshRender.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Camera.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\GInput.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -834,9 +843,6 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\GInput.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\MeshRender.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -868,6 +874,12 @@
       <Filter>include\lib\glm\detail</Filter>
     </ClCompile>
     <ClCompile Include="src\engine\Transform.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\Camera.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\GInput.cpp">
       <Filter>src\engine</Filter>
     </ClCompile>
   </ItemGroup>

@@ -5,22 +5,26 @@
 
 #include "engine/Resources.h"
 #include "engine/Transform.h"
+#include "engine/GInput.h"
 
 Game::Game(GLFWwindow* win)
 {
     window = win;
-    gInput = new GInput();
     render = new OSEngine::MeshRender();
 }
 
 Game::~Game()
 {
-    delete(gInput);
     delete(render);
 }
 
 void Game::Init()
 {
+    OSEngine::Transform transform;
+    transform.LocalPosition(OSEngine::vec3(1.0f, 1.0f, 0.0f));
+
+    OSEngine::GInput::Init(window);
+
     std::cout << "[Game Init] BEGIN" << std::endl;
     render->Init();
 
@@ -31,8 +35,7 @@ void Game::Init()
 
 void Game::Tick()
 {
-    gInput->ProcessInput(window);
-
+    OSEngine::GInput::Tick();
 }
 
 void Game::Draw()

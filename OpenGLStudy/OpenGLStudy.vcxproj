@@ -19,14 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\engine\Camera.h" />
+    <ClInclude Include="include\engine\Engine.h" />
+    <ClInclude Include="include\engine\MeshRender.h" />
     <ClInclude Include="include\engine\OSObject.h" />
     <ClInclude Include="include\engine\Component.h" />
     <ClInclude Include="include\engine\ResourceObject.h" />
     <ClInclude Include="include\engine\Resources.h" />
     <ClInclude Include="include\engine\Texture2D.h" />
     <ClInclude Include="include\engine\Transform.h" />
+    <ClInclude Include="include\engine\TRS.h" />
     <ClInclude Include="include\Game.h" />
-    <ClInclude Include="include\GInput.h" />
+    <ClInclude Include="include\engine\GInput.h" />
     <ClInclude Include="include\glad\glad.h" />
     <ClInclude Include="include\GLFW\glfw3.h" />
     <ClInclude Include="include\GLFW\glfw3native.h" />
@@ -272,7 +276,6 @@
     <ClInclude Include="include\glm\vec4.hpp" />
     <ClInclude Include="include\glm\vector_relational.hpp" />
     <ClInclude Include="include\KHR\khrplatform.h" />
-    <ClInclude Include="include\MeshRender.h" />
     <ClInclude Include="include\render\Shader.h" />
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\util\FileUtil.h" />
@@ -281,13 +284,14 @@
     <ClCompile Include="include\glm\detail\glm.cpp" />
     <ClCompile Include="include\stb_image.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\engine\Camera.cpp" />
     <ClCompile Include="src\engine\Component.cpp" />
     <ClCompile Include="src\engine\ResourceObject.cpp" />
     <ClCompile Include="src\engine\Resources.cpp" />
     <ClCompile Include="src\engine\Texture2D.cpp" />
     <ClCompile Include="src\engine\Transform.cpp" />
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GInput.cpp" />
+    <ClCompile Include="src\engine\GInput.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\MeshRender.cpp" />
     <ClCompile Include="src\render\Shader.cpp" />

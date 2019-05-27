@@ -44,8 +44,8 @@ namespace OSEngine
 
         if (it->second->UnLoad())
         {
-            mResMap.erase(name);
             delete it->second;
+            mResMap.erase(name);
         }
     }
 

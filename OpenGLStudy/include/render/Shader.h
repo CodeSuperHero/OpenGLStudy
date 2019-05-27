@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include "engine/Engine.h"
+
 namespace OSEngine
 {
     class Shader final
@@ -11,9 +13,10 @@ namespace OSEngine
 
         int Id();
         void Use();
-        void setBool(const std::string &name, bool value) const;
-        void setInt(const std::string &name, int value) const;
-        void setFloat(const std::string &name, float value) const;
+        void SetMat44(const std::string & name, mat4 value) const;
+        void SetBool(const std::string &name, bool value) const;
+        void SetInt(const std::string &name, int value) const;
+        void SetFloat(const std::string &name, float value) const;
 
     private:
         void CompileShader(const char * vertCode, const char * fragCode);

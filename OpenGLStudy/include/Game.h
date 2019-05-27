@@ -2,8 +2,8 @@
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
-#include "GInput.h"
-#include "MeshRender.h"
+
+#include "engine/MeshRender.h"
 
 class Game final
 {
@@ -16,9 +16,11 @@ public:
     void Draw();
     void UnInit();
 
+    const static unsigned int SCR_WIDTH = 800;
+    const static unsigned int SCR_HEIGHT = 600;
+
 private:
     GLFWwindow* window;
-    GInput* gInput;
     OSEngine::MeshRender* render;
 };
 
