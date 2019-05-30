@@ -2,8 +2,6 @@
 
 #include "engine/Resources.h"
 
-#include "glad/glad.h"
-
 namespace OSEngine
 {
     Shader::Shader(const char* vertFileName, const char* fragFileName)
@@ -26,6 +24,11 @@ namespace OSEngine
     void Shader::Use()
     {
         glUseProgram(mId);
+    }
+
+    void Shader::SetVec3(const std::string & name, vec3 value) const
+    {
+        glUniform3f(glGetUniformLocation(mId, name.c_str()), value.x, value.y, value.z);
     }
 
     void Shader::SetMat44(const std::string & name, mat4 value) const

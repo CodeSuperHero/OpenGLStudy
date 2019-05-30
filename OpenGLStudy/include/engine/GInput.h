@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
-#include "GLFW/glfw3.h"
 
 #include "engine/Engine.h"
 #include "engine/Camera.h"
+#include "Game.h"
 
 namespace OSEngine
 {
@@ -14,6 +14,7 @@ namespace OSEngine
         {
             window = win;
             glfwSetInputMode(win, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+            mousePosition = vec2(Game::SCR_WIDTH, Game::SCR_HEIGHT);
             glfwSetCursorPosCallback(window, InputMouseCallback);
             glfwSetScrollCallback(window, InputScrollCallback);
         }

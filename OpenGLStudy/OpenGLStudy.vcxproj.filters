@@ -781,6 +781,120 @@
     <ClInclude Include="include\engine\GInput.h">
       <Filter>include\engine</Filter>
     </ClInclude>
+    <ClInclude Include="include\engine\Light.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Compiler\poppack1.h">
+      <Filter>include\assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Compiler\pstdint.h">
+      <Filter>include\assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Compiler\pushpack1.h">
+      <Filter>include\assimp\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\port\AndroidJNI\AndroidJNIIOSystem.h">
+      <Filter>include\assimp\port\AndroidJNI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\ai_assert.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\anim.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\camera.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\cexport.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\cfileio.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\cimport.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\color4.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\config.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\DefaultLogger.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\defs.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Exporter.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Importer.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\importerdesc.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\IOStream.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\IOSystem.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\light.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\Logger.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\LogStream.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\material.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\matrix3x3.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\matrix4x4.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\mesh.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\metadata.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\NullLogger.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\postprocess.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\ProgressHandler.hpp">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\quaternion.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\scene.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\texture.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\types.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\vector2.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\vector3.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
+    <ClInclude Include="include\assimp\version.h">
+      <Filter>include\assimp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -837,6 +951,18 @@
     <Filter Include="include\lib\glm\gtx">
       <UniqueIdentifier>{17c2fba6-44c5-4a62-a847-a5505d813c1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\assimp">
+      <UniqueIdentifier>{1006723c-ab2a-44a6-9d50-d0106d0637c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\assimp\Compiler">
+      <UniqueIdentifier>{be29ee62-051d-46a2-8520-85179c8b5b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\assimp\port">
+      <UniqueIdentifier>{d9a4b920-5439-49a1-a117-55e7095e91c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\assimp\port\AndroidJNI">
+      <UniqueIdentifier>{d6ef12a5-f3de-4dc4-9e7e-8974c6d18394}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -881,6 +1007,9 @@
     </ClCompile>
     <ClCompile Include="src\engine\GInput.cpp">
       <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\Light.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1286,12 +1415,42 @@
     <None Include="include\glm\gtx\wrap.inl">
       <Filter>include\lib\glm\gtx</Filter>
     </None>
+    <None Include="include\assimp\.editorconfig">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\color4.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\material.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\matrix3x3.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\matrix4x4.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\quaternion.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\vector2.inl">
+      <Filter>include\assimp</Filter>
+    </None>
+    <None Include="include\assimp\vector3.inl">
+      <Filter>include\assimp</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\container.jpg">
       <Filter>assets</Filter>
     </Image>
     <Image Include="assets\awesomeface.png">
+      <Filter>assets</Filter>
+    </Image>
+    <Image Include="assets\container2.png">
+      <Filter>assets</Filter>
+    </Image>
+    <Image Include="assets\container2_specular.png">
       <Filter>assets</Filter>
     </Image>
   </ItemGroup>

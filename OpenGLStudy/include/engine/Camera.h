@@ -26,16 +26,19 @@ namespace OSEngine
         void Tick();
         void ScrollBack(vec2 v);
     private:
-        void UpdateView() { mView = glm::lookAt(mPosition, mPosition + mForward, mUp); }
+        void UpdateView()
+        {
+            mView = glm::lookAt(mPosition, mPosition + mForward, mUp);
+        }
+
         void UpdateProjection()
         {
             mProjection = glm::perspective(glm::radians(mFov), 800.0f / 600.0f, 0.1f, 100.0f);
         }
 
         bool firstMouse;
+        float_t mPitch, mYaw;
         vec2 lastMousePosition;
-        float_t pitch, yaw;
-
         vec3 mPosition;
         vec3 mForward;
         vec3 mUp;

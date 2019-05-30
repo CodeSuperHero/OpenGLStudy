@@ -4,6 +4,7 @@
 #include "engine/Component.h"
 #include "engine/Transform.h"
 #include "engine/Camera.h"
+#include "engine/Light.h"
 
 namespace OSEngine
 {
@@ -20,11 +21,14 @@ namespace OSEngine
     public:
         Transform transform;
     private:
-        unsigned int shaderProgram;
         unsigned int vaoHandler;
+        unsigned int vbo;
+
         Shader* shader;
         Texture2D* tex1;
         Texture2D* tex2;
         Camera camera;
+
+        Light light;
     };
 }

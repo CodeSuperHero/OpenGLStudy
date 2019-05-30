@@ -1,7 +1,6 @@
 #include "engine/Texture2D.h"
 
 #include "stb_image.h"
-
 #include <glm/glm.hpp>
 #include <glm/gtx/quaternion.hpp>
 #include <glm/common.hpp>

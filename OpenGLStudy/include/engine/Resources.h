@@ -2,12 +2,12 @@
 #include <iostream>
 #include <map>
 
-#include "engine/Texture2D.h"
+//#include "engine/Texture2D.h"
 #include "engine/ResourceObject.h"
 
 namespace OSEngine
 {
-
+    class Texture2D;
     class Resources final
     {
     public:
