@@ -8,6 +8,8 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
+#include "engine/OSObject.h"
+
 namespace OSEngine
 {
     typedef glm::vec2 vec2;

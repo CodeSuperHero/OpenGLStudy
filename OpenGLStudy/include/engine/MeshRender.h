@@ -5,6 +5,7 @@
 #include "engine/Transform.h"
 #include "engine/Camera.h"
 #include "engine/Light.h"
+#include "engine/Model.h"
 
 namespace OSEngine
 {
@@ -28,7 +29,7 @@ namespace OSEngine
         Texture2D* tex1;
         Texture2D* tex2;
         Camera camera;
-
+        Model model;
         Light light;
     };
 }

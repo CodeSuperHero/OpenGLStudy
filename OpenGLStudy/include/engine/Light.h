@@ -9,7 +9,7 @@ namespace OSEngine
     class Light
     {
     public:
-        Light() : mColor(vec3(1.0f, 1.0f, 1.0f)), position(vec3(1.2f, 1.0f, 2.0f)){}
+        Light() : mColor(vec3(1.0f, 1.0f, 1.0f)), position(vec3(1.2f, 1.0f, 5.0f)){}
         ~Light() { }
         void Init(unsigned int * vbo);
         void Render(Camera* camera);

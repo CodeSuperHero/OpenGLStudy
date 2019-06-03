@@ -32,10 +32,6 @@ namespace OSEngine
         model = glm::scale(model, vec3(0.2f));
         shader->SetMat44("model", model);
 
-        //shader->SetVec3("lightPos", position);
-     /*   shader->SetMat44("view", camera->GetView());
-        shader->SetMat44("projection", camera->GetProjection());*/
-
         glBindVertexArray(lightVao);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
