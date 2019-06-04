@@ -907,6 +907,9 @@
     <ClInclude Include="include\engine\Model.h">
       <Filter>include\engine</Filter>
     </ClInclude>
+    <ClInclude Include="include\Global.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">

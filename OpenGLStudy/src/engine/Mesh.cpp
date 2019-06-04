@@ -1,13 +1,12 @@
 #include "engine/Mesh.h"
 #include "engine/Vertex.h"
 #include "engine/Texture.h"
-
 #include "render/Shader.h"
 
 namespace OSEngine
 {
     using namespace std;
-    void Mesh::Draw(Shader shader)
+    void Mesh::Draw(const ShaderPtr shader)
     {
         unsigned int diffuseNr = 1;
         unsigned int specularNr = 1;
@@ -20,7 +19,7 @@ namespace OSEngine
                 number = to_string(diffuseNr++);
             else if (name == "texture_specular")
                 number = to_string(specularNr++);
-            shader.SetInt(("material." + name + number).c_str(), i);
+            shader->SetInt(("material." + name + number).c_str(), i);
             glBindTexture(GL_TEXTURE_2D, mTextures[i].id);
         }
 

@@ -1,13 +1,13 @@
 #pragma once
 #include <vector>
-
 #include "engine/Engine.h"
 
 namespace OSEngine
 {
+    SHARE_PTR_DEFINE(Shader)
+
     struct Vertex;
     struct TextureS;
-    class Shader;
 
     class Mesh : OSObject
     {
@@ -18,7 +18,7 @@ namespace OSEngine
         }
 
         ~Mesh() {};
-        void Draw(Shader shader);
+        void Draw(const ShaderPtr shader);
     private:
         std::vector<Vertex> mVertices;
         std::vector<unsigned int> mIndices;

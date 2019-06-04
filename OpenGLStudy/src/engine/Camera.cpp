@@ -6,7 +6,7 @@
 void OSEngine::Camera::SetCamera()
 {
     GInput::camera = this;
-    mPosition = vec3(0.0f, 0.0f, 3.0f);
+    mPosition = vec3(0.0f, 1.0f, 3.0f);
     mForward = vec3(0.0f, 0.0f, -1.0f);
     mUp = vec3(0.0f, 1.0f, 0.0f);
     mFov = 45.0f;

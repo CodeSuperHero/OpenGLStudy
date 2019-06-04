@@ -7,7 +7,7 @@ namespace OSEngine
 {
     using namespace std;
 
-    void Model::Draw(Shader shader)
+    void Model::Draw(const ShaderPtr shader)
     {
         for (auto i = 0; i < mMeshs.size(); i++)
             mMeshs[i].Draw(shader);
@@ -31,7 +31,7 @@ namespace OSEngine
         cout << "ProcessNode mNumMeshes :" << node->mNumMeshes << "ProcessNode mNumChildren :" << node->mNumChildren << endl;
         for (unsigned int i = 0; i < node->mNumMeshes; i++)
         {
-            auto mesh = scene->mMeshes[node->mMeshes[i]];
+            aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
             mMeshs.push_back(ProcessMesh(mesh, scene));
         }
 
@@ -60,7 +60,7 @@ namespace OSEngine
             vertex.Normal.y = temp.y;
             vertex.Normal.z = temp.z;
 
-            if (mesh->mTextureCoords)
+            if (mesh->mTextureCoords[0])
             {
                 temp = mesh->mTextureCoords[0][i];
                 vertex.TexCoords.x = temp.x;
@@ -75,7 +75,7 @@ namespace OSEngine
 
         for (unsigned int i = 0; i < mesh->mNumFaces; i++)
         {
-            auto face = mesh->mFaces[i];
+            aiFace face = mesh->mFaces[i];
             for (unsigned int j = 0; j < face.mNumIndices; j++)
             {
                 indices.push_back(face.mIndices[j]);

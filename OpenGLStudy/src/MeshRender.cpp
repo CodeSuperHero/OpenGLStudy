@@ -22,7 +22,10 @@ namespace OSEngine
 
     void MeshRender::InitShader()
     {
-        shader = new Shader("1.model.vert", "1.model.frag");
+        shader = Shader::New();
+        shader->Init("1.model.vert", "1.model.frag");
+        stencilShader = Shader::New();
+        stencilShader->Init("1.stencil.vert", "1.stencil.frag");
     }
 
     void MeshRender::Init()
@@ -31,12 +34,6 @@ namespace OSEngine
         InitShader();
         InitVAO();
         light.Init(&vbo);
-
-        /*tex1->Active(GL_TEXTURE0);
-        tex2->Active(GL_TEXTURE1);
-        shader->Use();
-        shader->SetInt("material.diffuse", 0);
-        shader->SetInt("material.specular", 1);*/
     }
 
     vec3 cubePositions[] =
@@ -56,18 +53,10 @@ namespace OSEngine
     void MeshRender::Render()
     {
         camera.Tick();
-        /*GLfloat currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;*/
-        /*vec3 lightColor;
-        lightColor.x = sin(glfwGetTime() * 2.0f);
-        lightColor.y = sin(glfwGetTime() * 0.7f);
-        lightColor.z = sin(glfwGetTime() * 1.3f);*/
-        vec3 diffuseColor = vec3(0.8f, 0.8f, 0.8f);// lightColor * glm::vec3(0.5f);
+        vec3 diffuseColor = vec3(0.8f, 0.8f, 0.8f);
         vec3 ambientColor = vec3(0.1f, 0.1f, 0.1f);
 
         shader->Use();
-        //std::cout << "[ MeshRender::Render] shader use id :" << shader->Id() << std::endl;
         shader->SetVec3("light.position", camera.Position());
         shader->SetVec3("light.direction", camera.Forward());
         shader->SetFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
@@ -80,7 +69,6 @@ namespace OSEngine
         shader->SetFloat("light.linear", 0.09f);
         shader->SetFloat("light.quadratic", 0.032);
 
-        //shader->SetVec3("material.specular", vec3(0.5f, 0.5f, 0.5f));
         shader->SetFloat("material.shininess", 64.0f);
 
         shader->SetVec3("viewPos", camera.Position());
@@ -88,25 +76,44 @@ namespace OSEngine
         shader->SetMat44("view", camera.GetView());
         shader->SetMat44("projection", camera.GetProjection());
 
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        glStencilMask(0xFF);
+
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
+        model = glm::translate(model, glm::vec3(1.0f, 0.0f, -1.0f));   // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	        // it's a bit too big for our scene, so scale it down
         shader->SetMat44("model", model);
-        //this->model.Draw(*shader);
+        this->model.Draw(shader);
+        //glBindVertexArray(vaoHandler);
+        //for (size_t i = 0; i < 9; i++)
+        //{
+        //    model = mat4(1.0f);
+        //    model = glm::translate(model, cubePositions[i]);
+        //    float_t angle = 20.0f * i;
+        //    model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
+            //shader.SetMat44("model", model);
+            //glDrawArrays(GL_TRIANGLES, 0, 36);
+        //}
+       // glBindVertexArray(0);
 
-        glBindVertexArray(vaoHandler);
-        for (size_t i = 0; i < 9; i++)
-        {
-            model = mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
-            float_t angle = 20.0f * i;
-            model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
-            shader->SetMat44("model", model);
-            glDrawArrays(GL_TRIANGLES, 0, 36);
-        }
-        glBindVertexArray(0);
+        //light.Render(&camera);
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00);
+        glDisable(GL_DEPTH_TEST);
 
-        light.Render(&camera);
+        stencilShader->Use();
+        stencilShader->SetMat44("view", camera.GetView());
+        stencilShader->SetMat44("projection", camera.GetProjection());
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(3.0f, 0.0f, -1.0f));
+        model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
+        stencilShader->SetMat44("model", model);
+        //glBindVertexArray(vaoHandler);
+        //glDrawArrays(GL_TRIANGLES, 0, 36);
+        //glBindVertexArray(0);
+        this->model.Draw(stencilShader);
+        glStencilMask(0xFF);
+        glEnable(GL_DEPTH_TEST);
     }
 
     float vertices[] =

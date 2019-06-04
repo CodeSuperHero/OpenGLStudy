@@ -9,6 +9,8 @@
 
 namespace OSEngine
 {
+    SHARE_PTR_DEFINE(Shader)
+
     class MeshRender final : Component
     {
     public:
@@ -25,7 +27,8 @@ namespace OSEngine
         unsigned int vaoHandler;
         unsigned int vbo;
 
-        Shader* shader;
+        ShaderPtr shader;
+        ShaderPtr stencilShader;
         Texture2D* tex1;
         Texture2D* tex2;
         Camera camera;

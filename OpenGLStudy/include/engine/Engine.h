@@ -26,4 +26,23 @@ namespace OSEngine
         float_t oneOverLen = 1 / glm::sqrt(sqrLen);
         return quat(q.w * oneOverLen, q.x * oneOverLen, q.y * oneOverLen, q.z * oneOverLen);
     }
+
+
+#define SHARE_PTR_DEFINE(T)    \
+class T;    \
+using T##Ptr = std::shared_ptr<T>;    \
+using T##WPtr = std::weak_ptr<T>;
+
+#define UNIQUE_PTR_DEFINE(T)    \
+class T;    \
+using T##UPtr = std::unique_ptr<T>;    \
+
+#define SELF_FACTORY(T) \
+static T##Ptr New() { return std::make_shared<T>(); }
+
+#define SELF_FACTORY_1(T, T1) \
+static T##Ptr New(T1 t1) { return std::make_shared<T>(t1); }
+
+#define SELF_FACTORY_2(T, T1, T2) \
+static T##Ptr New(T1 t1, T2 t2) { return std::make_shared<T>(t1, t1); }
 }

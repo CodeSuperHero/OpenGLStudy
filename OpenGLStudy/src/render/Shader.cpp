@@ -6,14 +6,20 @@ namespace OSEngine
 {
     Shader::Shader(const char* vertFileName, const char* fragFileName)
     {
-        auto vertCode = OSEngine::Resources::LoadShader(vertFileName);
-        auto fragCode = OSEngine::Resources::LoadShader(fragFileName);
-        CompileShader(vertCode, fragCode);
+        Init(vertFileName, fragFileName);
     }
 
     Shader::~Shader()
     {
         glDeleteProgram(mId);
+    }
+
+    void Shader::Init(const char * vertFileName, const char * fragFileName)
+    {
+        std::cout << " SHADER INIT. Vert Shader :" << vertFileName << ", Frag Shader :" << fragFileName << std::endl;
+        auto vertCode = OSEngine::Resources::LoadShader(vertFileName);
+        auto fragCode = OSEngine::Resources::LoadShader(fragFileName);
+        CompileShader(vertCode, fragCode);
     }
 
     int Shader::Id()

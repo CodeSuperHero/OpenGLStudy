@@ -4,6 +4,7 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
+
 #include "engine/Engine.h"
 #include "engine/Mesh.h"
 #include "engine/Vertex.h"
@@ -21,7 +22,7 @@ namespace OSEngine
         }
         ~Model() {};
 
-        void Draw(Shader shader);
+        void Draw(ShaderPtr shader);
         void LoadModel(const std::string path);
     private:
         void ProcessNode(aiNode *node, const aiScene *scene);
