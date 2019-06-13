@@ -910,6 +910,15 @@
     <ClInclude Include="include\Global.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Scene.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\OSGameObject.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\engine\Context.h">
+      <Filter>include\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -1030,6 +1039,13 @@
       <Filter>src\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\engine\Mesh.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\Scene.cpp">
+      <Filter>src\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="include\engine\OSObject.cpp" />
+    <ClCompile Include="src\engine\OSGameObject.cpp">
       <Filter>src\engine</Filter>
     </ClCompile>
   </ItemGroup>

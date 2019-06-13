@@ -8,8 +8,6 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
-#include "engine/OSObject.h"
-
 namespace OSEngine
 {
     typedef glm::vec2 vec2;
@@ -45,4 +43,10 @@ static T##Ptr New(T1 t1) { return std::make_shared<T>(t1); }
 
 #define SELF_FACTORY_2(T, T1, T2) \
 static T##Ptr New(T1 t1, T2 t2) { return std::make_shared<T>(t1, t1); }
+
+    enum ELayer
+    {
+        NONE = -1,
+        DEFAULT = 0,
+    };
 }

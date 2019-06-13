@@ -61,18 +61,14 @@ namespace OSEngine
         shader->SetVec3("light.direction", camera.Forward());
         shader->SetFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
         shader->SetFloat("light.outerCutOff", glm::cos(glm::radians(17.5f)));
-
         shader->SetVec3("light.ambient", ambientColor);
         shader->SetVec3("light.diffuse", diffuseColor);
         shader->SetVec3("light.specular", vec3(1.0f, 1.0f, 1.0f));
         shader->SetFloat("light.constant", 1.0f);
         shader->SetFloat("light.linear", 0.09f);
         shader->SetFloat("light.quadratic", 0.032);
-
         shader->SetFloat("material.shininess", 64.0f);
-
         shader->SetVec3("viewPos", camera.Position());
-
         shader->SetMat44("view", camera.GetView());
         shader->SetMat44("projection", camera.GetProjection());
 
@@ -84,23 +80,10 @@ namespace OSEngine
         model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	        // it's a bit too big for our scene, so scale it down
         shader->SetMat44("model", model);
         this->model.Draw(shader);
-        //glBindVertexArray(vaoHandler);
-        //for (size_t i = 0; i < 9; i++)
-        //{
-        //    model = mat4(1.0f);
-        //    model = glm::translate(model, cubePositions[i]);
-        //    float_t angle = 20.0f * i;
-        //    model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
-            //shader.SetMat44("model", model);
-            //glDrawArrays(GL_TRIANGLES, 0, 36);
-        //}
-       // glBindVertexArray(0);
-
         //light.Render(&camera);
         glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
         glStencilMask(0x00);
         glDisable(GL_DEPTH_TEST);
-
         stencilShader->Use();
         stencilShader->SetMat44("view", camera.GetView());
         stencilShader->SetMat44("projection", camera.GetProjection());
@@ -108,12 +91,14 @@ namespace OSEngine
         model = glm::translate(model, glm::vec3(3.0f, 0.0f, -1.0f));
         model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
         stencilShader->SetMat44("model", model);
-        //glBindVertexArray(vaoHandler);
-        //glDrawArrays(GL_TRIANGLES, 0, 36);
-        //glBindVertexArray(0);
         this->model.Draw(stencilShader);
         glStencilMask(0xFF);
         glEnable(GL_DEPTH_TEST);
+    }
+
+    void MeshRender::Render(const Context& camera)
+    {
+
     }
 
     float vertices[] =
@@ -161,7 +146,8 @@ namespace OSEngine
         -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f,  1.0f
     };
 
-    unsigned int indices[] = {
+    unsigned int indices[] =
+    {
         0, 1, 3, // first triangle
         1, 2, 3  // second triangle
     };

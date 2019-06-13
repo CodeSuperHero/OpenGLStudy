@@ -18,6 +18,7 @@ namespace OSEngine
         ~MeshRender();
         void Init();
         void Render();
+        virtual void Render(const Context& camera) override;
     private:
         void InitShader();
         void InitVAO();

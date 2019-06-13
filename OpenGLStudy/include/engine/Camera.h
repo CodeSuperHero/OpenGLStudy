@@ -1,4 +1,5 @@
 #pragma once
+#include <set>
 #include "engine/Engine.h"
 
 namespace OSEngine
@@ -25,6 +26,11 @@ namespace OSEngine
 
         void Tick();
         void ScrollBack(vec2 v);
+
+        bool Render(uint32_t layer) { return mLayers.count(layer); }
+
+        const std::set<uint32_t> Layers() { return mLayers; }
+
     private:
         void UpdateView()
         {
@@ -38,12 +44,14 @@ namespace OSEngine
 
         bool firstMouse;
         float_t mPitch, mYaw;
+        float_t mFov;
         vec2 lastMousePosition;
         vec3 mPosition;
         vec3 mForward;
         vec3 mUp;
-        float_t mFov;
         mat4 mView;
         mat4 mProjection;
+
+        std::set<uint32_t> mLayers;
     };
 }

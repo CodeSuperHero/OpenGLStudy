@@ -8,6 +8,7 @@ namespace OSEngine
     public:
         Component() {}
         virtual ~Component() {  }
+        virtual void Render(const Context& camera) override {}
     protected:
 
     };

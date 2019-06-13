@@ -57,10 +57,11 @@ namespace OSEngine
             }
         }
 
+        mat4 Model() { return trs.Model(); }
     private:
         TRS trs;
-
         uint32_t changeMask;
+        mat4 mModel;
     };
 }
 
